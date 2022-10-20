@@ -23,6 +23,8 @@ deployment:
   minReadySeconds: 0
 
 container:
+  customerRegistryRequestQueueAddress: ffc-techspike-customer-registry-request
+  messageQueueHost: namespace.servicebus.windows.net
   imagePullPolicy: IfNotPresent
   requestMemory: 10Mi
   requestCpu: 10m

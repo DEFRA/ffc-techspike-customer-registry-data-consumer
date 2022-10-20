@@ -10,4 +10,3 @@ const processDataRequest = async (message, receiver) => {
 }
 
 module.exports = processDataRequest
-D2234A0D3411BCA2
