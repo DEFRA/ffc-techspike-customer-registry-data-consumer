@@ -9,7 +9,7 @@ const sharedConfigSchema = {
 }
 
 const schema = Joi.object({
-    customerRegistryRequestQueue: {
+  customerRegistryRequestQueue: {
     address: Joi.string(),
     type: Joi.string(),
     ...sharedConfigSchema
@@ -25,7 +25,7 @@ const sharedConfig = {
 }
 
 const config = {
-    customerRegistryRequestQueue: {
+  customerRegistryRequestQueue: {
     address: process.env.CUSTOMERREGISTRYREQUEST_QUEUE_ADDRESS,
     type: 'queue',
     ...sharedConfig
