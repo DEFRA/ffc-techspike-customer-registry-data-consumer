@@ -23,14 +23,10 @@ containerSecret:
   type: Opaque
 
 deployment:
-  cpuThreshold: 40
-  memoryThreshold: 80
-  minReadySeconds: 0
-  minReplicas: 1
-  maxReplicas: 1
-  priorityClassName: default
   restartPolicy: Always
+  priorityClassName: default
   replicas: 1
+  minReadySeconds: 0
 
 container:
   customerRegistryRequestQueueAddress: ffc-techspike-customer-registry-request
@@ -38,8 +34,8 @@ container:
   imagePullPolicy: IfNotPresent
   requestMemory: 10Mi
   requestCpu: 10m
-  limitMemory: 120Mi
-  limitCpu: 120m
+  limitMemory: 40Mi
+  limitCpu: 40m
   port: 3000
 
 livenessProbe:
