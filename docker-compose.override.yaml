@@ -2,11 +2,11 @@
 # to provide dependencies and expose ports for local testing
 
 services:
-  ffc-template-node:
+  ffc-techspike-customer-registry-data-consumer:
     build:
       target: development
-    image: ffc-template-node-development
-    container_name: ffc-template-node-development
+    image: ffc-techspike-customer-registry-data-consumer-development
+    container_name: ffc-techspike-customer-registry-data-consumer-development
     ports:
       - "3000:3000"
       - "9229:9229"

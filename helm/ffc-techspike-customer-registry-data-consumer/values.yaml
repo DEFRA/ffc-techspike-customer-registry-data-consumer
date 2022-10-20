@@ -1,19 +1,25 @@
 environment: development
-name: ffc-template-node
-namespace: ffc-demo
-workstream: ffc-demo
-image: ffc-template-node
+name: ffc-techspike-customer-registry-data-consumer
+namespace: ffc-techspike
+workstream: ffc-techspike
+image: ffc-techspike-customer-registry-data-consumer
 
 labels: {}
+
+aadPodIdentity: true
 
 appInsights:
   key:
 
+azureIdentity:
+  clientID:
+  resourceID:
+
 containerConfigMap:
-  name: ffc-template-node-config-map
+  name: ffc-techspike-customer-registry-data-consumer-config-map
 
 containerSecret:
-  name: ffc-template-node-container-secret
+  name: ffc-techspike-customer-registry-data-consumer-container-secret
   type: Opaque
 
 deployment:
@@ -23,6 +29,8 @@ deployment:
   minReadySeconds: 0
 
 container:
+  customerRegistryRequestQueueAddress: ffc-techspike-customer-registry-request
+  messageQueueHost: namespace.servicebus.windows.net
   imagePullPolicy: IfNotPresent
   requestMemory: 10Mi
   requestCpu: 10m
