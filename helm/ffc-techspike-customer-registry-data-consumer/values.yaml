@@ -39,7 +39,7 @@ container:
   requestMemory: 10Mi
   requestCpu: 10m
   limitMemory: 120Mi
-  limitCpu: 120mi
+  limitCpu: 120m
   port: 3000
 
 livenessProbe:
