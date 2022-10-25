@@ -1,5 +1,6 @@
 const Joi = require('joi')
 const messageQueueConfig = require('./message-queue')
+const cosmosConfig = require('./cosmos')
 
 const schema = Joi.object({
   port: Joi.number().default(3005),
@@ -19,6 +20,7 @@ if (error) {
   throw new Error(`The server config is invalid. ${error.message}`)
 }
 
+value.cosmosConfig = cosmosConfig
 value.messageQueueConfig = messageQueueConfig
 
 module.exports = value
