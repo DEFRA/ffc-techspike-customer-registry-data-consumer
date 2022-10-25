@@ -17,10 +17,12 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "^19.1.1",
+    "@hapi/hapi": "20.2.2",
     "applicationinsights": "^2.2.1",
     "ffc-messaging": "2.5.1",
-    "@azure/cosmos": "^3.3.0"
+    "@azure/cosmos": "^3.3.0",
+    "hapi-pino": "10.1.0",
+    "@hapi/boom": "10.0.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",
