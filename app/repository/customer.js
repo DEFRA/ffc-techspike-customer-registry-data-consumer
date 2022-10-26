@@ -30,17 +30,17 @@ const queryContainer = async (sbi) => {
 } 
 
 const createItem = async (itemBody) => {
-  const { item } = await client
-  .database(databaseId)
-  .container(containerId)
+  const { item } = await cosmosClient
+  .database(config.database)
+  .container(config.container)
   .items.upsert(itemBody)
 console.log(`Created family item with id:\n${itemBody.id}\n`)
 }
 
 const updateItem = async (itemBody) => {
-  const { item } = await client
-    .database(databaseId)
-    .container(containerId)
+  const { item } = await cosmosClient
+    .database(config.database)
+    .container(config.container)
     .item(itemBody.id, itemBody.partitionKey)
     .replace(itemBody)
 }
