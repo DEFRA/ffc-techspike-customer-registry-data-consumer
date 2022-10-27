@@ -8,6 +8,11 @@ services:
     image: ffc-techspike-customer-registry-data-consumer-development
     container_name: ffc-techspike-customer-registry-data-consumer-test
     command: npm run test
+    environment:
+      COSMOS_ENDPOINT: test_endpoint
+      COSMOS_KEY: test_key
+      COSMOS_DATABASE: test_database
+      COSMOS_CONTAINER: test_container
     volumes:
       - ./app:/home/node/app
       - ./test:/home/node/test
