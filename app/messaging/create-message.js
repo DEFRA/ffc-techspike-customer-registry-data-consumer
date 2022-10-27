@@ -2,7 +2,7 @@ const createMessage = (body, type, options) => {
   return {
     body,
     type,
-    source: 'ffc-ahwr-application',
+    source: 'ffc-lnr-customer-registry-data-consumer',
     ...options
   }
 }
