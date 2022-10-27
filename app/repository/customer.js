@@ -27,26 +27,40 @@ const queryContainer = async (sbi) => {
   }
 
   return resultString
-} 
-
-const createItem = async (itemBody) => {
-  const { item } = await cosmosClient
-  .database(config.database)
-  .container(config.container)
-  .items.upsert(itemBody)
-console.log(`Created family item with id:\n${itemBody.id}\n`)
 }
 
-const updateItem = async (itemBody) => {
-  const { item } = await cosmosClient
+const createItem = async (itemBody) => {
+  await cosmosClient
     .database(config.database)
     .container(config.container)
-    .item(itemBody.id, itemBody.partitionKey)
+    .items.upsert(itemBody)
+
+  console.log(`Created customer registry item with id:\n${itemBody.id}\n`)
+}
+
+const updateItem = async (id, partitionId, itemBody) => {
+  await cosmosClient
+    .database(config.database)
+    .container(config.container)
+    .item(id, partitionId)
     .replace(itemBody)
+
+  console.log(`Updated customer registry item with id:\n${id}\n`)
+}
+
+const deleteItem = async (id, partitionId, itemBody) => {
+  await cosmosClient
+    .database(config.database)
+    .container(config.container)
+    .item(id, partitionId)
+    .delete()
+
+  console.log(`Deleted customer registry item with id:\n${id}\n`)
 }
 
 module.exports = {
   queryContainer,
-  createItem, 
-  updateItem
+  createItem,
+  updateItem,
+  deleteItem
 }
