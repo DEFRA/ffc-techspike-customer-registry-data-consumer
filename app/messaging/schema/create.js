@@ -15,7 +15,8 @@ const createSchema = Joi.object({
     address: Joi.string().required(),
     company: Joi.string().required(),
     createdOn: Joi.date().required(),
-    updatedOn: Joi.date().required()
+    updatedOn: Joi.date().required(),
+    schemes: Joi.array().items()
   }).required()
 })
 
