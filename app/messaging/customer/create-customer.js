@@ -12,7 +12,8 @@ const create = async (itemBody) => {
     'create',
     itemBody,
     {},
-    `created a new customer record for ${itemBody.sbi}`)
+    `created a new customer record for ${itemBody.sbi}`,
+    itemBody.email)
 }
 
 module.exports = create

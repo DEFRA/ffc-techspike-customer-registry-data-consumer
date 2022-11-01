@@ -14,7 +14,8 @@ const updateAddress = async (itemBody) => {
     'update-address',
     itemBody,
     {},
-    `Updated customer address record for ${itemBody.sbi}`)
+    `Updated customer address record for ${itemBody.sbi}`,
+    customer.email)
 }
 
 module.exports = updateAddress
