@@ -17,7 +17,7 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "20.2.2",
+    "@hapi/hapi": "20.3.0",
     "applicationinsights": "^2.2.1",
     "ffc-messaging": "2.5.1",
     "@azure/cosmos": "^3.3.0",
